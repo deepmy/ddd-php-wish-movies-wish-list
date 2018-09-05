@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    nginx:
+      image: app/docker-web:nginx
+      build:
+        context: ./docker/nginx/
+    cli:
+      image: app/docker-web:cli
+      build:
+        context: ./docker/php-fpm/
+    mysql:
+      image: app/docker-web:mysql
+      build:
+        context: ./docker/mysql

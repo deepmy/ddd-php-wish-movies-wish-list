@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+  nginx:
+    image: app/docker-web:nginx
+    ports:
+      - "8085:80"
+    volumes:
+      - ./:/var/www/html
+    links:
+      - web
+    container_name: nginx_api
+  web:
+    image: app/docker-web:cli
+    volumes:
+      - ./:/var/www/html
+    container_name: web_api
+  mysql:
+    image: app/docker-web:mysql
+    environment:
+     MYSQL_ROOT_PASSWORD: 1234
+     MYSQL_DATABASE: cineapp_local
+    ports:
+     - 3306:3306
+    volumes:
+     - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+    command: mysqld --sql_mode=""
+
