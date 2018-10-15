@@ -13,27 +13,46 @@ use Core\Common\Entity\Entity;
 use Core\Domain\ValueObject\Address;
 use Core\Domain\ValueObject\Contact;
 
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+
+/**
+ * The User class demonstrates how to annotate a simple
+ * PHP class to act as a Doctrine entity.
+ *
+ * @ORM\Entity()
+ * @ORM\Table(name="user")
+ */
 class User extends Entity
 {
 
-    /** @var Contact */
-    private $contact;
+//    /** @var Contact */
+//    private $contact;
+//
+//    /** @var Address */
+//    private $address;
+//
+//    /** @var Wish[] */
+//    private $wishes;
 
-    /** @var Address */
-    private $address;
-
-    /** @var Wish[] */
-    private $wishes;
-
-    /** @var String */
     private $username;
 
-    /** @var Friend[] */
-    private $friends;
+    private $name;
 
-    /** @var String */
-    private $password;
+//    /** @var Friend[] */
+//    private $friends;
+//
+//    /** @var String */
+//    private $password;
 
-    /** @var \DateTime */
     private $createdAt;
+
+    public static function create($username, $name) {
+        $user = new User();
+        $user->username = $username;
+        $user->name = $name;
+        $user->createdAt =  new \DateTime();
+
+        return $user;
+    }
 }
