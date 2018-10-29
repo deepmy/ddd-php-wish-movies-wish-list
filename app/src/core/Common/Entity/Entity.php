@@ -12,7 +12,7 @@ namespace Core\Common\Entity;
 class Entity extends AbstractEntity
 {
     /** @var String */
-    private $id;
+    protected $id;
 
     public function __construct()
     {
