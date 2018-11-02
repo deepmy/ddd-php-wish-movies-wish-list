@@ -1,0 +1,22 @@
+Core\Domain\ValueObject\Address:
+  type: embeddable
+  fields:
+    contry:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+    city:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+    homeAddress:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+      column: home_address

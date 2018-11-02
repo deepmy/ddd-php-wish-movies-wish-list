@@ -20,7 +20,7 @@ class Movie extends Entity
     private $wishes;
 
     /** @var String */
-    private $sinopsis;
+    private $synopsis;
 
     /** @var \DateTime */
     private $createdAt;

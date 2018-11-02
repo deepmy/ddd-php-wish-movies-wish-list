@@ -1,0 +1,27 @@
+Core\Domain\ValueObject\Contact:
+  type: embeddable
+  fields:
+    name:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+    surname:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+    phone:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false
+    email:
+      type: string
+      nullable: true
+      length: 250
+      options:
+        fixed: false

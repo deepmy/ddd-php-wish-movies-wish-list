@@ -18,5 +18,15 @@ class Address
     private $city;
 
     /** @var String */
-    private $address;
+    private $homeAddress;
+
+    public static function create(String $country = null, String $city = null, String $homeAddress) {
+        $address = new Address();
+
+        $address->contry = $country;
+        $address->city = $city;
+        $address->homeAddress = $homeAddress;
+
+        return $address;
+    }
 }

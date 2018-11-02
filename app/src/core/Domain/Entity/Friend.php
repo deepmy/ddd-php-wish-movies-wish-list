@@ -18,6 +18,9 @@ class Friend extends Entity
     private $user;
 
     /** @var String */
+    private $friendId;
+
+    /** @var String */
     private $state;
 
     /** @var \DateTime */
