@@ -16,7 +16,6 @@ Core\Domain\Entity\Movie:
       length: 250
       options:
         fixed: false
-      column: friend_id
     synopsis:
       type: text
       nullable: true
@@ -29,7 +28,6 @@ Core\Domain\Entity\Movie:
       length: 250
       options:
         fixed: false
-      column: friend_id
     createdAt:
       type: datetime
       nullable: true

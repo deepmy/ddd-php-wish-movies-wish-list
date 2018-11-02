@@ -24,5 +24,5 @@ class Friend extends Entity
     private $state;
 
     /** @var \DateTime */
-    private $createdat;
+    private $createdAt;
 }

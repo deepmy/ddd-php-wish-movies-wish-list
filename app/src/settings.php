@@ -30,7 +30,7 @@ return [
 
             // you should add any other path containing annotated entity classes
             'metadata_dirs' => [APP_ROOT . '/src/core/Domain/Entity', APP_ROOT . '/src/core/Domain/ValueObject'],
-            'path_dirs' => __DIR__ . '/src/core/Infrastructure/Persistence/Doctrine/Mapping',
+            'path_dirs' => __DIR__ . '/core/Infrastructure/Persistence/Doctrine/Mapping',
             'prefix_namespace' => 'Core\Domain',
             'extension_file' => '.orm.yml',
             //'host' => '127.0.0.1',
