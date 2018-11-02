@@ -22,4 +22,15 @@ class Contact
 
     /** @var String */
     private $email;
+
+    public static function create(String $name, String $surname, String $phone, String $email) {
+        $contact = new Contact();
+
+        $contact->name = $name;
+        $contact->phone = $phone;
+        $contact->email = $email;
+        $contact->surname = $surname;
+
+        return $contact;
+    }
 }

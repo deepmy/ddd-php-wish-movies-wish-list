@@ -1,7 +1,7 @@
-Core\Domain\Entity\User:
+Core\Domain\Entity\Movie:
   type: entity
-  table: user
-  name: User
+  table: movie
+  name: Movie
   id:
     id:
       type: string
@@ -10,13 +10,19 @@ Core\Domain\Entity\User:
       generator:
         strategy: NONE
   fields:
-    password:
+    name:
       type: string
       nullable: false
       length: 250
       options:
         fixed: false
-    username:
+    synopsis:
+      type: text
+      nullable: true
+      length: 65535
+      options:
+        fixed: false
+    status:
       type: string
       nullable: false
       length: 250
@@ -31,14 +37,4 @@ Core\Domain\Entity\User:
   oneToMany:
     wishes:
       targetEntity: Core\Domain\Entity\Wish
-      mappedBy: User
-    friends:
-      targetEntity: Core\Domain\Entity\Friend
-      mappedBy: Friend
-  embedded:
-    contact:
-      class: Core\Domain\ValueObject\Contact
-      columnPrefix: false
-    address:
-      class: Core\Domain\ValueObject\Address
-      columnPrefix: false
+      mappedBy: movie

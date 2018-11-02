@@ -10,7 +10,9 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 
     /** @var \Doctrine\ORM\EntityManager $entityManager */
     $entityManager = $this->get(\Doctrine\ORM\EntityManager::class);
-    $user = User::create('jojo', 'carlos');
+    $contact = \Core\Domain\ValueObject\Contact::create('Juan', 'Perez', '956298983', 'jbmarflo@gmail.com');
+    $address = \Core\Domain\ValueObject\Address::create('Peru', 'Lima', 'La molina');
+    $user = User::create($contact, 'juan.perez', '123456', $address);
     $entityManager->persist($user);
     $entityManager->flush();
 

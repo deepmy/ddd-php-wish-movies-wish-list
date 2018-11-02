@@ -1,0 +1,31 @@
+Core\Domain\Entity\Wish:
+  type: entity
+  table: wish
+  name: Wish
+  id:
+    id:
+      type: string
+      length: 40
+      id: true
+      generator:
+        strategy: NONE
+  fields:
+    createdAt:
+      type: datetime
+      nullable: true
+      options:
+        fixed: false
+      column: created_at
+  manyToOne:
+    user:
+      targetEntity: Core\Domain\Entity\User
+      inversedBy: Wish
+      joinColumns:
+        name: user
+        referencedColumnName: id
+    movie:
+      targetEntity: Core\Domain\Entity\Movie
+      inversedBy: Wish
+      joinColumns:
+        name: movie
+        referencedColumnName: id

@@ -10,6 +10,7 @@ namespace Core\Domain\Entity;
 
 
 use Core\Common\Entity\Entity;
+use Core\Common\Enum\State;
 
 class Movie extends Entity
 {
@@ -20,11 +21,22 @@ class Movie extends Entity
     private $wishes;
 
     /** @var String */
-    private $sinopsis;
+    private $synopsis;
 
     /** @var \DateTime */
     private $createdAt;
 
     /** @var String */
     private $status;
+
+    public static function create(String $name, String $synopsis = null) {
+        $movie = new Movie();
+
+        $movie->name = $name;
+        $movie->synopsis = $synopsis;
+        $movie->status = State::ACTIVE;
+        $movie->createdAt = new \DateTime();
+
+        return $movie;
+    }
 }

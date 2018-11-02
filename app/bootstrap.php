@@ -23,9 +23,9 @@ $container[EntityManager::class] = function (Container $container): EntityManage
         new \Doctrine\Common\Annotations\AnnotationReader(),
         $container['settings']['doctrine']['metadata_dirs']
     );
-    $path = __DIR__ . '/src/core/Infrastructure/Persistence/Doctrine/Mapping';
-    $prefix = "Core\Domain";
-    $locator = new SymfonyFileLocator([$path => $prefix], '.orm.yml');
+    $path = $container['settings']['doctrine']['path_dirs'];
+    $prefix = $container['settings']['doctrine']['prefix_namespace'];
+    $locator = new SymfonyFileLocator([$path => $prefix], $container['settings']['doctrine']['extension_file']);
     $driver->setLocator($locator);
 
     $config->setMetadataDriverImpl($driver);

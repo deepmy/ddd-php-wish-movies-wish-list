@@ -22,4 +22,13 @@ class Wish extends Entity
     /** @var \DateTime */
     private $createdAt;
 
+    public static function create(User $user, Movie $movie) {
+        $wish = new Wish();
+
+        $wish->user = $user;
+        $wish->movie = $movie;
+        $wish->createdAt = new \DateTime();
+
+        return $wish;
+    }
 }

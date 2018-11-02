@@ -12,11 +12,21 @@ namespace Core\Domain\ValueObject;
 class Address
 {
     /** @var String */
-    private $contry;
+    private $country;
 
     /** @var String */
     private $city;
 
     /** @var String */
-    private $address;
+    private $homeAddress;
+
+    public static function create(String $country, String $city, String $homeAddress) {
+        $address = new Address();
+
+        $address->country = $country;
+        $address->city = $city;
+        $address->homeAddress = $homeAddress;
+
+        return $address;
+    }
 }
